@@ -1,0 +1,32 @@
+{
+  "name": "package-usage-analyzer",
+  "version": "0.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
+  },
+  "bin": {
+    "pua": "index.js"
+  },
+  "author": "cond",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/parser": "^7.15.3",
+    "cli-progress": "^3.9.0",
+    "express": "^4.18.1",
+    "get-port": "^5.0.0",
+    "glob": "^7.1.7",
+    "open": "^8.4.0",
+    "yargs": "^17.1.1"
+  },
+  "release-it": {
+    "hooks": {
+      "after:bump": "cd frontend && npm run build"
+    }
+  },
+  "devDependencies": {
+    "release-it": "^15.1.1"
+  }
+}
