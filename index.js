@@ -63,7 +63,7 @@ glob(`${rootDir}/**/*.js`, {}, async (err, files) => {
         const usagePackages = i.specifiers.map(i => i.imported ? i.imported.name : i.local.name)
 
         if (packageName.match(/^[\.\\]/)) {
-          packageName = path.relative(currentDir, path.join(file, packageName))
+          packageName = path.relative(currentDir, path.join(path.dirname(file), packageName))
         }
 
         let packageVersion
