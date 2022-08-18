@@ -1,7 +1,7 @@
 {
   "name": "package-usage-analyzer",
   "version": "0.0.7",
-  "description": "",
+  "description": "A tool to analyze where and how much packages and files used in frontend projects are used",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -28,5 +28,20 @@
   },
   "devDependencies": {
     "release-it": "^15.1.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indatawetrust/package-usage-analyzer.git"
+  },
+  "keywords": [
+    "package",
+    "usage",
+    "analyzer",
+    "ui",
+    "tool"
+  ],
+  "bugs": {
+    "url": "https://github.com/indatawetrust/package-usage-analyzer/issues"
+  },
+  "homepage": "https://github.com/indatawetrust/package-usage-analyzer#readme"
 }
