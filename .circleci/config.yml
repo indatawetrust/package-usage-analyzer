@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: cimg/node:16.17.0
+    steps:
+      - checkout
+      - run: echo "Running tests"
+      - run: npm ci
+      - run: npm test
+
+workflows:
+  test_build:
+    jobs:
+      - test
