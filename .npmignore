@@ -1,3 +1,4 @@
 frontend/*
 !frontend/build/*
 frontend/build/output.json
+coverage
