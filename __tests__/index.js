@@ -21,14 +21,18 @@ describe('package usage analyzer tests', () => {
 
     expect(onAnalyze).toBeCalledTimes(4)
 
-    const analyzeResult = result.analyze
+    const analyzeResult = result.analyze.map(item => {
+      item.file = item.file.replace(currentDir, '').slice(1)
+
+      return item;
+    })
 
     const allPackagesResult = [...result.allPackages]
 
     expect(analyzeResult).toEqual([
-      { "file": "/Users/ahmetsimsek/package-usage-analyzer/__tests__/fixtures/foo/bar/baz.js", "usages": [{ "packageName": "open", "usagePackages": ["open"] }, { "packageName": "__tests__/fixtures/other-1", "usagePackages": ["other1", "NUM"] }] },
-      { "file": "/Users/ahmetsimsek/package-usage-analyzer/__tests__/fixtures/index.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }, { "packageName": "release-it", "usagePackages": ["releaseIt"] }] },
-      { "file": "/Users/ahmetsimsek/package-usage-analyzer/__tests__/fixtures/other-1.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }] },
+      { "file": "__tests__/fixtures/foo/bar/baz.js", "usages": [{ "packageName": "open", "usagePackages": ["open"] }, { "packageName": "__tests__/fixtures/other-1", "usagePackages": ["other1", "NUM"] }] },
+      { "file": "__tests__/fixtures/index.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }, { "packageName": "release-it", "usagePackages": ["releaseIt"] }] },
+      { "file": "__tests__/fixtures/other-1.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }] },
     ])
 
     expect(allPackagesResult).toEqual(
