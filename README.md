@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/indatawetrust/package-usage-analyzer/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/indatawetrust/package-usage-analyzer/tree/main)
+
 # package-usage-analyzer
 
 A tool to analyze where and how much packages and files used in frontend projects are used
