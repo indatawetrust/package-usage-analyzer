@@ -38,9 +38,9 @@ describe('package usage analyzer tests', () => {
     expect(allPackagesResult).toEqual(
       [
         ["open", { "packageName": "open", "usageCount": 3, "importType": 2, "packageVersion": "^8.4.0" }],
-        ["__tests__/fixtures/other-1", { "packageName": "__tests__/fixtures/other-1", "usageCount": 1, "importType": 1 }],
+        ["__tests__/fixtures/other-1", { "packageName": "__tests__/fixtures/other-1", "usageCount": 1, "importType": 1, "packageVersion": undefined }],
         ["express", { "packageName": "express", "usageCount": 2, "importType": 2, "packageVersion": "^4.18.1" }],
-        ["release-it", { "packageName": "release-it", "usageCount": 1, "importType": 3, "packageVersion": "^15.1.1" }],
+        ["release-it", { "packageName": "release-it", "usageCount": 1, "importType": 3, "packageVersion": "^15.4.2" }],
       ]
     )
   })
