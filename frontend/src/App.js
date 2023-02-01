@@ -37,7 +37,7 @@ function App() {
   const getAllPackages = useCallback(() => {
     if (searchTerm?.length) {
       return allPackages.filter(pkg => (
-        pkg.packageName?.includes(searchTerm)
+        pkg.packageName?.toLowerCase?.().includes(searchTerm?.toLowerCase())
       ));
     }
 
