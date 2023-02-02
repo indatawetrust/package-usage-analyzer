@@ -1,6 +1,6 @@
 {
   "name": "package-usage-analyzer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A tool to analyze where and how much packages and files used in frontend projects are used",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,9 @@
   },
   "release-it": {
     "hooks": {
-      "before:init": ["npm test"],
+      "before:init": [
+        "npm test"
+      ],
       "after:bump": "cd frontend && npm run build"
     }
   },
