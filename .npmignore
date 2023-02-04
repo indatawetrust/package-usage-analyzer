@@ -1,4 +1,4 @@
 frontend/*
-!frontend/build/*
-frontend/build/output.json
+!frontend/dist/*
+frontend/dist/output.json
 coverage
