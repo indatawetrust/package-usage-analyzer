@@ -38,14 +38,14 @@ packageUsageAnalyzer({
   analyze,
   allPackages,
 }) => {
-  fs.writeFile(packageDir + '/../frontend/build/output.json', JSON.stringify({
+  fs.writeFile(packageDir + '/../frontend/dist/output.json', JSON.stringify({
     analyze,
     allPackages: [...allPackages.values()].sort((a, b) => b.usageCount - a.usageCount)
   }, null, 2))
 
   bar1.stop()
 
-  app.use(express.static(packageDir + '/../frontend/build'))
+  app.use(express.static(packageDir + '/../frontend/dist'))
 
   const randomPort = await getPort()
 
