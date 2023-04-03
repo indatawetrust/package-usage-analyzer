@@ -1,6 +1,6 @@
 {
   "name": "package-usage-analyzer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A tool to analyze where and how much packages and files used in frontend projects are used",
   "main": "lib/index.js",
   "scripts": {
@@ -18,7 +18,6 @@
     "@babel/parser": "^7.15.3",
     "cli-progress": "^3.9.0",
     "express": "^4.18.1",
-    "g": "^2.0.1",
     "get-port": "^5.0.0",
     "glob": "^7.1.7",
     "open": "^8.4.0",
