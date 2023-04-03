@@ -1,6 +1,6 @@
 {
   "name": "package-usage-analyzer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A tool to analyze where and how much packages and files used in frontend projects are used",
   "main": "lib/index.js",
   "scripts": {
