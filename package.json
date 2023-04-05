@@ -14,7 +14,6 @@
   "author": "cond",
   "license": "MIT",
   "dependencies": {
-    "-": "0.0.1",
     "@babel/parser": "^7.15.3",
     "cli-progress": "^3.9.0",
     "express": "^4.18.1",
