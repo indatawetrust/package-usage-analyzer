@@ -30,7 +30,7 @@ describe('package usage analyzer tests', () => {
     const allPackagesResult = [...result.allPackages]
 
     expect(analyzeResult).toEqual([
-      { "file": "__tests__/fixtures/foo/bar/baz.js", "usages": [{ "packageName": "open", "usagePackages": ["open"] }, { "packageName": "__tests__/fixtures/other-1", "usagePackages": ["other1", "NUM"] }] },
+      { "file": "__tests__/fixtures/foo/bar/baz.js", "usages": [{ "packageName": "open", "usagePackages": ["open"] }, { "packageName": "glob/sync", "usagePackages": ["globSync"] }, { "packageName": "__tests__/fixtures/other-1", "usagePackages": ["other1", "NUM"] }] },
       { "file": "__tests__/fixtures/index.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }, { "packageName": "release-it", "usagePackages": ["releaseIt"] }] },
       { "file": "__tests__/fixtures/other-1.js", "usages": [{ "packageName": "express", "usagePackages": ["a"] }, { "packageName": "open", "usagePackages": ["b"] }] },
     ])
@@ -38,6 +38,7 @@ describe('package usage analyzer tests', () => {
     expect(allPackagesResult).toEqual(
       [
         ["open", { "packageName": "open", "usageCount": 3, "importType": 2, "packageVersion": "^8.4.0" }],
+        ["glob/sync", { "packageName": "glob/sync", "usageCount": 1, "importType": 2, "packageVersion": "^7.1.7" }],
         ["__tests__/fixtures/other-1", { "packageName": "__tests__/fixtures/other-1", "usageCount": 2, "importType": 1, "packageVersion": undefined }],
         ["express", { "packageName": "express", "usageCount": 2, "importType": 2, "packageVersion": "^4.18.1" }],
         ["release-it", { "packageName": "release-it", "usageCount": 1, "importType": 3, "packageVersion": "^15.4.2" }],
