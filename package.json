@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest __tests__/index.js --coverage",
     "release": "release-it",
-    "rebuild": "cd frontend && npm run build && cd .. && npm un -g . && npm i -g ."
+    "rebuild": "cd frontend && npm run build && cd .. && npm un -g && npm i -g ."
   },
   "bin": {
     "pua": "bin/index.js"

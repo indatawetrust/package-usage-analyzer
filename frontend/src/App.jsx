@@ -48,8 +48,17 @@ function App() {
     fetch('/output.json')
       .then(res => res.json())
       .then(output => {
-        setAllPackages(output.allPackages);
-        setAnalyze(output.analyze);
+        const { analyze, allPackages } = output;
+
+        setAllPackages(
+          allPackages
+            .map(item => ({
+              ...item,
+              numberOfFilesUsed: analyze.filter(file => file.usages.find(usage => usage.packageName === item.packageName)).length || 0,
+            }))
+        );
+
+        setAnalyze(analyze);
       })
   }, []);
 

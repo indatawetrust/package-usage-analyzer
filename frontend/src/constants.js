@@ -50,4 +50,9 @@ export const TABLE_COLUMNS = [
     defaultSortOrder: 'descend',
     sorter: (a, b) => a.usageCount - b.usageCount,
   },
+  {
+    title: 'Number of Files Used',
+    dataIndex: 'numberOfFilesUsed',
+    key: 'numberOfFilesUsed',
+  }
 ];
