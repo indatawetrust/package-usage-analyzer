@@ -103,7 +103,13 @@ function App() {
                         usageName: record[0],
                         packageName: packageItem.packageName,
                       })}
-                      renderItem={item => <List.Item>{item}</List.Item>}
+                      renderItem={item => (
+                        <List.Item>
+                          <a style={{ color: '#000' }} href={`vscode://file${item}`}>
+                            {item}
+                          </a>
+                        </List.Item>
+                      )}
                     />
                   )
                 },
