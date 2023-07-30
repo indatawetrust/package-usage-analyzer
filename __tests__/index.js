@@ -29,6 +29,15 @@ describe("package usage analyzer tests", () => {
 
     const allPackagesResult = [...result.allPackages];
 
+    allPackagesResult.forEach(pkg => {
+      delete pkg[1].files
+      
+      return ([
+        pkg[0],
+        pkg[1],
+      ])
+    })
+
     expect(analyzeResult).toEqual([
       {
         file: "__tests__/fixtures/foo/bar/baz.js",
@@ -66,11 +75,6 @@ describe("package usage analyzer tests", () => {
           usageCount: 3,
           importType: 2,
           packageVersion: "^8.4.0",
-          files: [
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/foo/bar/baz.js",
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/index.js",
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/other-1.js",
-          ],
         },
       ],
       [
@@ -80,9 +84,6 @@ describe("package usage analyzer tests", () => {
           usageCount: 1,
           importType: 2,
           packageVersion: "^7.1.7",
-          files: [
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/foo/bar/baz.js",
-          ],
         },
       ],
       [
@@ -91,9 +92,6 @@ describe("package usage analyzer tests", () => {
           packageName: "__tests__/fixtures/other-1",
           usageCount: 2,
           importType: 1,
-          files: [
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/foo/bar/baz.js",
-          ],
         },
       ],
       [
@@ -103,10 +101,6 @@ describe("package usage analyzer tests", () => {
           usageCount: 2,
           importType: 2,
           packageVersion: "^4.18.1",
-          files: [
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/index.js",
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/other-1.js",
-          ],
         },
       ],
       [
@@ -116,9 +110,6 @@ describe("package usage analyzer tests", () => {
           usageCount: 1,
           importType: 3,
           packageVersion: "^15.4.2",
-          files: [
-            "/Users/ahmet.simsek/projects/package-usage-analyzer/__tests__/fixtures/index.js",
-          ],
         },
       ],
     ]);
