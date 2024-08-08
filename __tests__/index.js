@@ -19,7 +19,7 @@ describe("package usage analyzer tests", () => {
 
     expect(onStart).toBeCalledTimes(1);
 
-    expect(onAnalyze).toBeCalledTimes(4);
+    expect(onAnalyze).toBeCalledTimes(5);
 
     const analyzeResult = result.analyze.map((item) => {
       item.file = item.file.replace(currentDir, "").slice(1);
@@ -31,7 +31,7 @@ describe("package usage analyzer tests", () => {
 
     allPackagesResult.forEach(pkg => {
       delete pkg[1].files
-      
+
       return ([
         pkg[0],
         pkg[1],
@@ -65,6 +65,23 @@ describe("package usage analyzer tests", () => {
           { packageName: "open", usagePackages: ["b"] },
         ],
       },
+      {
+        file: "__tests__/fixtures/other-3.ts",
+        usages: [
+          {
+            packageName: "get-port",
+            usagePackages: [
+              "getPort",
+            ],
+          },
+          {
+            packageName: "yargs",
+            usagePackages: [
+              "yargs",
+            ],
+          },
+        ],
+      }
     ]);
 
     expect(allPackagesResult).toEqual([
@@ -112,6 +129,24 @@ describe("package usage analyzer tests", () => {
           packageVersion: "^15.4.2",
         },
       ],
+      [
+        "get-port",
+        {
+          importType: 2,
+          packageName: "get-port",
+          packageVersion: "^5.0.0",
+          usageCount: 1,
+        },
+      ],
+      [
+        "yargs",
+        {
+          importType: 2,
+          packageName: "yargs",
+          packageVersion: "^17.1.1",
+          usageCount: 1,
+        },
+      ]
     ]);
   });
 
