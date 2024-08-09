@@ -126,7 +126,7 @@ describe("package usage analyzer tests", () => {
           packageName: "release-it",
           usageCount: 1,
           importType: 3,
-          packageVersion: "^15.4.2",
+          packageVersion: "^17.6.0",
         },
       ],
       [
